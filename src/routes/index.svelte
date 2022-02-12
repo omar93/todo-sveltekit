@@ -3,7 +3,7 @@
   import TodoForm from '$lib/components/TodoForm.svelte'
 </script>
 
-<main class="border-8 border-red-600">
+<main>
   <section>
     <TodoList/>
     <TodoForm/>
@@ -15,12 +15,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height:100vh;
   }
 
   section {
+    width: 800px;
+    height: 100%;
     border: 1px solid green;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 
 </style>

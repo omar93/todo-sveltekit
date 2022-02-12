@@ -1,6 +1,13 @@
 <script>
   import TodoItem from '$lib/components/TodoItem.svelte'
-  export let todos = ['omar','ali','ali','ali','ali','ali','ali','ali','ali','ali','ali','ali','ali']
+  import { store } from '$lib/Store.js'
+  
+  let todos = []
+
+  store.subscribe(todoStore => {
+    todos = [...todoStore]
+  })
+  
 </script>
 
 <ul>
