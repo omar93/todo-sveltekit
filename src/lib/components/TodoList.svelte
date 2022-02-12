@@ -7,11 +7,16 @@
   store.subscribe(todoStore => {
     todos = [...todoStore]
   })
+
+  const updateTodoStatus = ({detail})=> {
+    const index = $store.findIndex(item => item.id === detail.id)
+    $store[index] = detail
+  }
   
 </script>
 
 <ul>
   {#each todos as todo}
-    <TodoItem {todo}/>
+    <TodoItem {todo} on:update={updateTodoStatus}/>
   {/each}
 </ul>

@@ -4,7 +4,7 @@
   let inputText
 
   const handleSubmit = () => {
-    store.set([...$store, inputText])
+    store.set([...$store, {text:inputText,isDone:false,id:0}])
     inputText = ''
   }
 

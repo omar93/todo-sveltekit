@@ -19,9 +19,8 @@
   }
 
   section {
-    width: 800px;
+    width: 100%;
     height: 100%;
-    border: 1px solid green;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -1,22 +1,31 @@
 <script>
-  export let todo = 'tja'
+  import { createEventDispatcher } from 'svelte'
+
+  const dispatch = createEventDispatcher()
+
+  export let todo = {
+    text: 'tja',
+    isDone: false,
+    id: 0
+  }
 
   let isDone = false
 
   let handleClick = () => {
-    isDone = !isDone
+    todo.isDone = !todo.isDone
+    dispatch('update', todo)
   }
 </script>
 
 <li on:click={handleClick}
   class = 
   "
-    {isDone ? 'done' : ''}
+    {todo.isDone ? 'done' : ''}
     text-black-700 
     text-2xl
     text-center
   "
->{todo}</li>
+>{todo.text}</li>
 
 <style>
   .done {
